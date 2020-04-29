@@ -6,7 +6,8 @@ class NanoKeys {
   static String seedToPrivate(String seed, int index) {
     assert(NanoSeeds.isValidSeed(seed));
     assert(index >= 0);
-    return NanoHelpers.byteToHex(Ed25519Blake2b.derivePrivkey(NanoHelpers.hexToBytes(seed), index))
+    return NanoHelpers.byteToHex(
+            Ed25519Blake2b.derivePrivkey(NanoHelpers.hexToBytes(seed), index))
         .toUpperCase();
   }
 

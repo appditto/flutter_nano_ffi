@@ -1,6 +1,6 @@
 name: flutter_nano_ffi
-description: Nano cryptocurrency tools using FFI
-version: 1.0.0
+description: Low-level library for the NANO cryptocurrency. Supports signatures, key generation, and more. Uses FFI interop for better performance.
+version: 1.0.1
 homepage: https://appditto.com
 
 environment:

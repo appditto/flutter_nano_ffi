@@ -7,7 +7,7 @@ import 'package:flutter_nano_ffi/src/encrypt/kdf/sha256_kdf.dart';
 import 'package:flutter_nano_ffi/src/encrypt/model/keyiv.dart';
 import 'package:flutter_nano_ffi/src/util.dart';
 
-/// Utility for encrypting and decrypting 
+/// Utility for encrypting and decrypting
 class NanoCrypt {
   /// Decrypts a value with a password using AES/CBC/PKCS7
   /// KDF is Sha256KDF if not specified
@@ -53,8 +53,10 @@ class NanoCrypt {
 
     KeyIV keyInfo = kdf.deriveKey(password, salt: salt);
 
-    Uint8List seedEncrypted = AesCbcPkcs7.encrypt(valBytes, key: keyInfo.key, iv: keyInfo.iv);
+    Uint8List seedEncrypted =
+        AesCbcPkcs7.encrypt(valBytes, key: keyInfo.key, iv: keyInfo.iv);
 
-    return NanoHelpers.concat([NanoHelpers.stringToBytesUtf8("Salted__"), salt, seedEncrypted]);
+    return NanoHelpers.concat(
+        [NanoHelpers.stringToBytesUtf8("Salted__"), salt, seedEncrypted]);
   }
 }

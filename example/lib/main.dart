@@ -20,7 +20,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     // Generating a random seed
-    String seed = NanoSeeds.generateSeed(); 
+    String seed = NanoSeeds.generateSeed();
     // Getting private key at index-0 of this seed
     String privateKey = NanoKeys.seedToPrivate(seed, 0);
     // Getting public key from this private key
@@ -32,12 +32,16 @@ class _MyAppState extends State<MyApp> {
 
     // Creating a block
     int accountType = NanoAccountType.NANO;
-    String account = 'xrb_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php';
+    String account =
+        'xrb_3igf8hd4sjshoibbbkeitmgkp1o6ug4xads43j6e4gqkj5xk5o83j8ja9php';
     String previous = '0';
-    String representative = 'xrb_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j';
+    String representative =
+        'xrb_3p1asma84n8k84joneka776q4egm5wwru3suho9wjsfyuem8j95b3c78nw8j';
     BigInt balance = BigInt.parse('1');
-    String link = '1EF0AD02257987B48030CC8D38511D3B2511672F33AF115AD09E18A86A8355A8';
-    String calculatedHash = NanoBlocks.computeStateHash(accountType, account, previous, representative, balance, link);
+    String link =
+        '1EF0AD02257987B48030CC8D38511D3B2511672F33AF115AD09E18A86A8355A8';
+    String calculatedHash = NanoBlocks.computeStateHash(
+        accountType, account, previous, representative, balance, link);
     // Signing a block
     NanoSignatures.signBlock(calculatedHash, privateKey);
 
@@ -46,7 +50,8 @@ class _MyAppState extends State<MyApp> {
     // String representation:
     String encryptedSeedHex = NanoHelpers.byteToHex(encrypted);
     // Decrypting (if incorrect password, will throw an exception)
-    Uint8List decrypted = NanoCrypt.decrypt(NanoHelpers.hexToBytes(encryptedSeedHex), 'thisisastrongpassword');    
+    Uint8List decrypted = NanoCrypt.decrypt(
+        NanoHelpers.hexToBytes(encryptedSeedHex), 'thisisastrongpassword');
   }
 
   @override
