@@ -1,3 +1,7 @@
+## 1.0.1
+
+* Address pub analysis warnings
+
 ## 1.0.0
 
 * Initial release
