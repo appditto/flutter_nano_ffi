@@ -1,0 +1,14 @@
+# ninja log v5
+5	116	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/memzero.c.o	fab9a90222e82615
+3	127	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/ed25519-donna-32bit-tables.c.o	d562499034a7b261
+2	149	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/curve25519-donna-helpers.c.o	c98a417b82c16d4d
+2	164	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/curve25519-donna-scalarmult-base.c.o	d81e1b6ce3eab8fe
+3	180	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/ed25519-donna-basepoint-table.c.o	26173ebaf7419b28
+4	209	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/ed25519.c.o	914c0efee48b2656
+6	376	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/modm-donna-32bit.c.o	ec5dbff990208d
+4	376	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/ed25519-donna-impl-base.c.o	1918b149a6a95b3
+1	402	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/curve25519-donna-32bit.c.o	b5870a0271015703
+1	703	0	CMakeFiles/ed25519-donna.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519-donna/blake2b.c.o	d52867ee5345825a
+703	767	0	libed25519-donna.a	2350883a2e2c39a8
+767	822	0	CMakeFiles/ed25519_blake2b.dir/Users/beb279/repos/flutter_nano_ffi/ios/Classes/ed25519_blake2b/ed25519_blake2b.c.o	a9981c1dc465a0ac
+822	855	0	/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates/cmake/release/obj/x86_64/libed25519_blake2b.so	4b94962cd0a76198

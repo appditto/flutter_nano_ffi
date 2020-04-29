@@ -1,0 +1,22 @@
+{
+  "buildFiles": [
+    "/Users/beb279/repos/flutter_nano_ffi/android/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/beb279/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/release/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "ed25519_blake2b-Release-arm64-v8a": {
+      "artifactName": "ed25519_blake2b",
+      "buildCommand": "/Users/beb279/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/release/arm64-v8a --target ed25519_blake2b",
+      "abi": "arm64-v8a",
+      "output": "/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates/cmake/release/obj/arm64-v8a/libed25519_blake2b.so"
+    },
+    "ed25519-donna-Release-arm64-v8a": {
+      "artifactName": "ed25519-donna",
+      "buildCommand": "/Users/beb279/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/release/arm64-v8a --target ed25519-donna",
+      "abi": "arm64-v8a",
+      "output": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/release/arm64-v8a/libed25519-donna.a"
+    }
+  }
+}
