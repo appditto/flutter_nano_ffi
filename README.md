@@ -1,5 +1,7 @@
 # Flutter NANO FFI
 
+[![CI](https://github.com/appditto/flutter_nano_ffi/workflows/CI/badge.svg)](https://github.com/appditto/flutter_nano_ffi/actions)
+
 A [Nano](https://nano.org) and [Banano](https://banano.cc) cryptocurrency library for the [Dart](https://dart.dev) programming language
 
 Based on [NanoDart](https://pub.dev/packages/nanodart), but makes uses of dart ffi interop to run ed25519 operations natively.

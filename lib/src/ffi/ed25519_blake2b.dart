@@ -7,9 +7,16 @@ import 'dart:typed_data';
 
 import 'package:ffi/ffi.dart';
 
+// Get if lib set in environment
+final String libraryPath = 
+  Platform.environment.containsKey("ED215519_SO_FILE") 
+  ? Platform.environment["ED215519_SO_FILE"]
+  : null;
+
 // Load C library and functions
-final DynamicLibrary dyLib = Platform.isAndroid
-    ? DynamicLibrary.open("libed25519_blake2b.so")
+final DynamicLibrary dyLib = libraryPath != null
+    ? DynamicLibrary.open(libraryPath)
+    : Platform.isAndroid ? DynamicLibrary.open("libed25519_blake2b.so")
     : DynamicLibrary.process();
 
 // C publickey function - void dart_publickey(unsigned char *sk, unsigned char *pk);
