@@ -1,4 +1,3 @@
-import 'package:flutter_nano_ffi/src/crypto/blake2b.dart';
 import 'package:flutter_nano_ffi/src/ffi/ed25519_blake2b.dart';
 import 'package:flutter_nano_ffi/src/keys/seeds.dart';
 import 'package:flutter_nano_ffi/src/util.dart';

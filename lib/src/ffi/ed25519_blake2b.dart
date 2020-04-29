@@ -28,7 +28,7 @@ final void Function(Pointer<Uint8>, Pointer<Uint8>, int) privkeyFunc =
 typedef signature_func = Void Function(Pointer<Uint8> sig, Uint32 mlen, Pointer<Uint8> m, Pointer<Uint8> randr, Pointer<Uint8> sk);
 typedef Signature = void Function(Pointer<Uint8> sig, int mlen, Pointer<Uint8> m, Pointer<Uint8> randr, Pointer<Uint8> sk);
 final void Function(Pointer<Uint8>, int, Pointer<Uint8>, Pointer<Uint8>, Pointer<Uint8>) signFunc = 
-  dyLib.lookup<NativeFunction<signature_func>>('dart_privatekey').asFunction<Signature>();
+  dyLib.lookup<NativeFunction<signature_func>>('dart_sign').asFunction<Signature>();
 
 // C validate sig function - int dart_validate_sig(ed25519_signature sig, size_t mlen, unsigned char *m, ed25519_public_key pk) {
 typedef verify_func = Int32 Function(Pointer<Uint8> sig, Uint32 mlen, Pointer<Uint8> m, Pointer<Uint8> pk);
