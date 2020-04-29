@@ -5,4 +5,6 @@
  *   basepoint: a packed little endian point of the curve
  */
 
+#include "ed25519.h"
+
 void curve25519_scalarmult_donna(curve25519_key mypublic, const curve25519_key n, const curve25519_key basepoint);

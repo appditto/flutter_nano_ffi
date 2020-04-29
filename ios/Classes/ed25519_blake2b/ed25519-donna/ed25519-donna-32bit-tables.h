@@ -1,3 +1,5 @@
+#include "ed25519-donna.h"
+
 extern const ge25519 ALIGN(16) ge25519_basepoint;
 
 /*
