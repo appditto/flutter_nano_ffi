@@ -1,8 +1,7 @@
 name: flutter_nano_ffi
 description: Nano cryptocurrency tools using FFI
 version: 1.0.0
-author: Appditto LLC
-homepage: appditto.com
+homepage: https://appditto.com
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
