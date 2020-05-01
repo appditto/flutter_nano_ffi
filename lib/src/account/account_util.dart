@@ -2,7 +2,7 @@ import "dart:typed_data" show Uint8List;
 
 import 'package:flutter_nano_ffi/src/account/account_coder.dart';
 import 'package:flutter_nano_ffi/src/account/account_type.dart';
-import 'package:flutter_nano_ffi/src/crypto/blake2b.dart';
+import 'package:flutter_nano_ffi/src/ffi/ed25519_blake2b.dart';
 import 'package:flutter_nano_ffi/src/util.dart';
 
 class NanoAccounts {
@@ -66,9 +66,7 @@ class NanoAccounts {
   }
 
   static String calculatedEncodedChecksum(String publicKey) {
-    // TODO - do this in ffi too?
-    Uint8List checksum = NanoHelpers.reverse(
-        Blake2b.digest(5, [NanoHelpers.hexToBytes(publicKey)]));
+    Uint8List checksum = NanoHelpers.reverse(Ed25519Blake2b.accountChecksum(NanoHelpers.hexToBytes(publicKey)));
     String binaryChecksum =
         NanoHelpers.hexToBinary(NanoHelpers.byteToHex(checksum))
             .padLeft(40, "0");

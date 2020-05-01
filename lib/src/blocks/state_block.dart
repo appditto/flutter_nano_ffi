@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:flutter_nano_ffi/src/account/account_type.dart';
 import 'package:flutter_nano_ffi/src/account/account_util.dart';
-import 'package:flutter_nano_ffi/src/crypto/blake2b.dart';
+import 'package:flutter_nano_ffi/src/ffi/ed25519_blake2b.dart';
 import 'package:flutter_nano_ffi/src/util.dart';
 
 class NanoBlocks {
@@ -10,8 +10,6 @@ class NanoBlocks {
       String previous, String representative, BigInt balance, String link) {
     assert(accountType == NanoAccountType.BANANO ||
         accountType == NanoAccountType.NANO);
-    Uint8List statePreamble = NanoHelpers.hexToBytes(
-        "0000000000000000000000000000000000000000000000000000000000000006");
     Uint8List accountBytes =
         NanoHelpers.hexToBytes(NanoAccounts.extractPublicKey(account));
     Uint8List previousBytes = NanoHelpers.hexToBytes(previous.padLeft(64, "0"));
@@ -21,13 +19,8 @@ class NanoBlocks {
     Uint8List linkBytes = NanoAccounts.isValid(accountType, link)
         ? NanoHelpers.hexToBytes(NanoAccounts.extractPublicKey(link))
         : NanoHelpers.hexToBytes(link);
-    return NanoHelpers.byteToHex(Blake2b.digest256([
-      statePreamble,
-      accountBytes,
-      previousBytes,
-      representativeBytes,
-      balanceBytes,
-      linkBytes
-    ])).toUpperCase();
+    return NanoHelpers.byteToHex(
+      Ed25519Blake2b.computeHash(accountBytes, previousBytes, representativeBytes, balanceBytes, linkBytes)
+    );
   }
 }

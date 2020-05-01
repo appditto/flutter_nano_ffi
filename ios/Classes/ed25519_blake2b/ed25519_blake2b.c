@@ -31,3 +31,27 @@ int dart_validate_sig(ed25519_signature sig, size_t mlen, unsigned char *m, ed25
   int valid = ed25519_sign_open(m, mlen, pk, sig) == 0;
   return valid;
 }
+
+void dart_hash_state_block(
+  unsigned char *hash, unsigned char *preamble, unsigned char *account, unsigned char *previous,
+  unsigned char *rep, unsigned char *balance, unsigned char *link)
+{
+  blake2b_state b2b;
+
+  blake2b_Init(&b2b, 32);
+  blake2b_Update(&b2b, preamble, 32);
+  blake2b_Update(&b2b, account, 32);
+  blake2b_Update(&b2b, previous, 32);
+  blake2b_Update(&b2b, rep, 32);
+  blake2b_Update(&b2b, balance, 16);
+  blake2b_Update(&b2b, link, 32);
+  blake2b_Final(&b2b, hash, 32);  
+}
+
+void dart_account_checksum(unsigned char *checksum, unsigned char *publickey) {
+  blake2b_state b2b;
+
+  blake2b_Init(&b2b, 5);
+  blake2b_Update(&b2b, publickey, 32);
+  blake2b_Final(&b2b, checksum, 5);
+}

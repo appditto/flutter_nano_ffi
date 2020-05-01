@@ -4,7 +4,7 @@
 
 A [Nano](https://nano.org) and [Banano](https://banano.cc) cryptocurrency library for the [Dart](https://dart.dev) programming language
 
-Based on [NanoDart](https://pub.dev/packages/nanodart), but makes uses of dart ffi interop to run ed25519 operations natively.
+Based on [NanoDart](https://pub.dev/packages/nanodart), but uses C functions for blake2b hashing and ed25519 cryptogaphy - using Dart's FFI features.
 
 ## Features
 

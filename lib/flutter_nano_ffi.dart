@@ -2,7 +2,6 @@ export 'src/account/account_coder.dart';
 export 'src/account/account_type.dart';
 export 'src/account/account_util.dart';
 export 'src/blocks/state_block.dart';
-export 'src/crypto/blake2b.dart';
 export 'src/crypto/sha.dart';
 export 'src/ffi/ed25519_blake2b.dart';
 export 'src/encrypt/aes/aes_cbcpkcs7.dart';

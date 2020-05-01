@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "__locale": "c",
+        "bitset": "c",
+        "memory": "c",
+        "optional": "c",
+        "string": "c",
+        "string_view": "c",
+        "system_error": "c",
+        "thread": "c",
+        "type_traits": "c",
+        "utility": "c",
+        "vector": "c"
+    }
+}

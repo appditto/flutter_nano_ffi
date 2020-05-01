@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Use C for all blake2b hash calculations (Account checksum, block hash calculation)
+
 ## 1.0.1
 
 * Address pub analysis warnings
