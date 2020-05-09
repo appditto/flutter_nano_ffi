@@ -1,7 +1,7 @@
 name: flutter_nano_ffi
 description: Low-level library for the NANO cryptocurrency. Supports signatures, key generation, and more. Uses C functions for ed25519 and blake2b.
 version: 1.0.2
-homepage: https://github.com/appditto/nanodart
+homepage: https://github.com/appditto/flutter_nano_ffi
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
