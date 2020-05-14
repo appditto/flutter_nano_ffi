@@ -33,7 +33,7 @@ jobs:
 
       - uses: subosito/flutter-action@v1
         with:
-          flutter-version: '1.12.x'
+          flutter-version: '1.17.x'
           channel: 'stable'
 
       - name: Set workspace in env
