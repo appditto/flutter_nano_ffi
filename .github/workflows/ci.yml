@@ -41,7 +41,7 @@ jobs:
 
       - name: Run tests
         env:
-          ED215519_SO_FILE: ${{ env.workspace }}/libraries/libed25519_blake2b.so
+          ED215519_SO_FILE: ${{ env.WORKSPACE }}/libraries/libed25519_blake2b.so
         run: |
           flutter pub get
           flutter test
