@@ -7,13 +7,13 @@ class NanoKeys {
     assert(NanoSeeds.isValidSeed(seed));
     assert(index >= 0);
     return NanoHelpers.byteToHex(
-            Ed25519Blake2b.derivePrivkey(NanoHelpers.hexToBytes(seed), index))
+            Ed25519Blake2b.derivePrivkey(NanoHelpers.hexToBytes(seed), index)!)
         .toUpperCase();
   }
 
   static String createPublicKey(String privateKey) {
     assert(NanoSeeds.isValidSeed(privateKey));
     return NanoHelpers.byteToHex(
-        Ed25519Blake2b.getPubkey(NanoHelpers.hexToBytes(privateKey)));
+        Ed25519Blake2b.getPubkey(NanoHelpers.hexToBytes(privateKey))!);
   }
 }

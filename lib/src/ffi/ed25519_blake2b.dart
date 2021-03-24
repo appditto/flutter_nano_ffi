@@ -8,13 +8,13 @@ import 'package:ffi/ffi.dart';
 import 'package:flutter_nano_ffi/src/util.dart';
 
 // Get if lib set in environment
-final String libraryPath = Platform.environment.containsKey("ED215519_SO_FILE")
+final String? libraryPath = Platform.environment.containsKey("ED215519_SO_FILE")
     ? Platform.environment["ED215519_SO_FILE"]
     : null;
 
 // Load C library and functions
 final DynamicLibrary dyLib = libraryPath != null
-    ? DynamicLibrary.open(libraryPath)
+    ? DynamicLibrary.open(libraryPath!)
     : Platform.isAndroid
         ? DynamicLibrary.open("libed25519_blake2b.so")
         : DynamicLibrary.process();
@@ -95,7 +95,7 @@ class Ed25519Blake2b {
   // Copy byte array to native heap
   static Pointer<Uint8> _bytesToPointer(Uint8List bytes) {
     final length = bytes.lengthInBytes;
-    final result = allocate<Uint8>(count: length);
+    final result = calloc<Uint8>(length);
 
     for (var i = 0; i < length; ++i) {
       result[i] = bytes[i];
@@ -105,33 +105,33 @@ class Ed25519Blake2b {
   }
 
   // Get public key from secret key
-  static Uint8List getPubkey(Uint8List secretKey) {
+  static Uint8List? getPubkey(Uint8List secretKey) {
     final pointer = _bytesToPointer(secretKey);
-    final result = allocate<Uint8>(count: 32);
+    final result = calloc<Uint8>(32);
     pubkeyFunc(pointer, result);
-    free(pointer);
+    calloc.free(pointer);
     return result.asTypedList(32);
   }
 
   // Derive private key from seed at index
-  static Uint8List derivePrivkey(Uint8List seed, int index) {
+  static Uint8List? derivePrivkey(Uint8List seed, int index) {
     final seedPointer = _bytesToPointer(seed);
-    final result = allocate<Uint8>(count: 32);
+    final result = calloc<Uint8>(32);
     privkeyFunc(result, seedPointer, index);
-    free(seedPointer);
+    calloc.free(seedPointer);
     return result.asTypedList(32);
   }
 
   // Sign message with given private key
-  static Uint8List signMessage(Uint8List m, Uint8List sk) {
+  static Uint8List? signMessage(Uint8List m, Uint8List sk) {
     final mPointer = _bytesToPointer(m);
     final skPointer = _bytesToPointer(sk);
     final randPointer = _bytesToPointer(rand32());
-    final result = allocate<Uint8>(count: 64);
+    final result = calloc<Uint8>(64);
     signFunc(result, m.lengthInBytes, mPointer, randPointer, skPointer);
-    free(mPointer);
-    free(skPointer);
-    free(randPointer);
+    calloc.free(mPointer);
+    calloc.free(skPointer);
+    calloc.free(randPointer);
     return result.asTypedList(64);
   }
 
@@ -142,9 +142,9 @@ class Ed25519Blake2b {
     final sigPointer = _bytesToPointer(sig);
     bool valid =
         verifyFunc(sigPointer, m.lengthInBytes, mPointer, pkPointer) == 1;
-    free(mPointer);
-    free(pkPointer);
-    free(sigPointer);
+    calloc.free(mPointer);
+    calloc.free(pkPointer);
+    calloc.free(sigPointer);
     return valid;
   }
 
@@ -152,7 +152,7 @@ class Ed25519Blake2b {
   static Uint8List computeHash(
     Uint8List account, Uint8List previous, Uint8List rep, Uint8List balance, Uint8List link
   ) {
-      final Pointer<Uint8> hashP = allocate<Uint8>(count: 32);
+      final Pointer<Uint8> hashP = calloc<Uint8>(32);
       final Pointer<Uint8> preambleP = _bytesToPointer(NanoHelpers.hexToBytes("0000000000000000000000000000000000000000000000000000000000000006"));
       final Pointer<Uint8> accountP = _bytesToPointer(account);
       final Pointer<Uint8> previousP = _bytesToPointer(previous);
@@ -160,16 +160,16 @@ class Ed25519Blake2b {
       final Pointer<Uint8> balanceP = _bytesToPointer(balance);
       final Pointer<Uint8> linkP = _bytesToPointer(link);
       hashFunc(hashP, preambleP, accountP, previousP, repP, balanceP, linkP);
-      free(preambleP); free(accountP); free(previousP); free(repP); free(balanceP); free(linkP);
+      calloc.free(preambleP); calloc.free(accountP); calloc.free(previousP); calloc.free(repP); calloc.free(balanceP); calloc.free(linkP);
       return hashP.asTypedList(32);
   }
 
   // Account checksum
   static Uint8List accountChecksum(Uint8List publickey) {
-    final Pointer<Uint8> checksumP = allocate<Uint8>(count: 5);
+    final Pointer<Uint8> checksumP = calloc<Uint8>(5);
     final Pointer<Uint8> pkP = _bytesToPointer(publickey);
     checksumFunc(checksumP, pkP);
-    free(pkP);
+    calloc.free(pkP);
     return checksumP.asTypedList(5);
   }
 
