@@ -37,7 +37,7 @@ jobs:
           channel: 'stable'
 
       - name: Set workspace in env
-        run: echo "WORKSPACE=$(echo ${GITHUB_WORKSAPCE})" >> $GITHUB_ENV
+        run: echo "WORKSPACE=$(echo ${GITHUB_WORKSPACE})" >> $GITHUB_ENV
 
       - name: Run tests
         env:
