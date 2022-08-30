@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.2'
+        classpath 'com.android.tools.build:gradle:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -42,7 +42,8 @@ android {
             path "CMakeLists.txt"
             version "3.18.0+"
         }
-    }    
+    }
+  ndkVersion '25.1.8937393'
 }
 
 dependencies {

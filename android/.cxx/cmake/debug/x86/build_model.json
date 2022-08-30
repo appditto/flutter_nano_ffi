@@ -1,20 +1,116 @@
 {
+  "abi": "X86",
+  "info": {
+    "abi": "X86",
+    "bitness": 32,
+    "deprecated": false,
+    "default": true
+  },
+  "originalCxxBuildFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86",
+  "cxxBuildFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86",
+  "abiPlatformVersion": 19,
+  "cmake": {
+    "cmakeWrappingBaseFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86",
+    "cmakeArtifactsBaseFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86",
+    "effectiveConfiguration": {
+      "name": "traditional-android-studio-cmake-environment",
+      "description": "Composite reified CMakeSettings configuration",
+      "generator": "Ninja",
+      "inheritEnvironments": [
+        "ndk"
+      ],
+      "buildRoot": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86",
+      "cmakeToolchain": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/build/cmake/android.toolchain.cmake",
+      "cmakeExecutable": "/Users/user/Library/Android/sdk/cmake/3.22.1/bin/cmake",
+      "variables": [
+        {
+          "name": "CMAKE_FIND_ROOT_PATH",
+          "value": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/prefab/x86/prefab"
+        },
+        {
+          "name": "CMAKE_BUILD_TYPE",
+          "value": "Debug"
+        },
+        {
+          "name": "CMAKE_TOOLCHAIN_FILE",
+          "value": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/build/cmake/android.toolchain.cmake"
+        },
+        {
+          "name": "ANDROID_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "ANDROID_NDK",
+          "value": "/Users/user/Library/Android/sdk/ndk/25.1.8937393"
+        },
+        {
+          "name": "ANDROID_PLATFORM",
+          "value": "android-19"
+        },
+        {
+          "name": "CMAKE_ANDROID_ARCH_ABI",
+          "value": "x86"
+        },
+        {
+          "name": "CMAKE_ANDROID_NDK",
+          "value": "/Users/user/Library/Android/sdk/ndk/25.1.8937393"
+        },
+        {
+          "name": "CMAKE_EXPORT_COMPILE_COMMANDS",
+          "value": "ON"
+        },
+        {
+          "name": "CMAKE_LIBRARY_OUTPUT_DIRECTORY",
+          "value": "/Users/user/repos/flutter_nano_ffi/android/build/intermediates/cmake/debug/obj/x86"
+        },
+        {
+          "name": "CMAKE_RUNTIME_OUTPUT_DIRECTORY",
+          "value": "/Users/user/repos/flutter_nano_ffi/android/build/intermediates/cmake/debug/obj/x86"
+        },
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "/Users/user/Library/Android/sdk/cmake/3.22.1/bin/ninja"
+        },
+        {
+          "name": "CMAKE_SYSTEM_NAME",
+          "value": "Android"
+        },
+        {
+          "name": "CMAKE_SYSTEM_VERSION",
+          "value": "19"
+        }
+      ]
+    },
+    "cmakeServerLogFile": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/cmake_server_log.txt"
+  },
   "variant": {
+    "buildSystemArgumentList": [],
+    "cFlagsList": [],
+    "cppFlagsList": [],
+    "variantName": "debug",
+    "objFolder": "/Users/user/repos/flutter_nano_ffi/android/build/intermediates/cmake/debug/obj",
+    "soFolder": "/Users/user/repos/flutter_nano_ffi/android/build/intermediates/cmake/debug/lib",
+    "isDebuggableEnabled": true,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": [],
+    "implicitBuildTargetSet": [],
+    "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "rootBuildGradleFolder": "/Users/beb279/repos/flutter_nano_ffi/example/android",
-      "sdkFolder": "/Users/beb279/Library/Android/sdk",
-      "isNativeCompilerSettingsCacheEnabled": false,
-      "isBuildOnlyTargetAbiEnabled": true,
+      "cxxFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx",
       "splitsAbiFilterSet": [],
-      "intermediatesFolder": "/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates",
-      "gradleModulePathName": ":flutter_nano_ffi",
-      "moduleRootFolder": "/Users/beb279/repos/flutter_nano_ffi/android",
-      "makeFile": "/Users/beb279/repos/flutter_nano_ffi/android/CMakeLists.txt",
+      "intermediatesFolder": "/Users/user/repos/flutter_nano_ffi/android/build/intermediates",
+      "gradleModulePathName": ":",
+      "moduleRootFolder": "/Users/user/repos/flutter_nano_ffi/android",
+      "moduleBuildFile": "/Users/user/repos/flutter_nano_ffi/android/build.gradle",
+      "makeFile": "/Users/user/repos/flutter_nano_ffi/android/CMakeLists.txt",
       "buildSystem": "CMAKE",
-      "compilerSettingsCacheFolder": "/Users/beb279/repos/flutter_nano_ffi/example/android/.cxx",
-      "cxxFolder": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx",
-      "ndkFolder": "/Users/beb279/Library/Android/sdk/ndk/21.1.6352462",
-      "ndkVersion": "21.1.6352462",
+      "ndkFolder": "/Users/user/Library/Android/sdk/ndk/25.1.8937393",
+      "ndkVersion": "25.1.8937393",
       "ndkSupportedAbiList": [
         "ARMEABI_V7A",
         "ARM64_V8A",
@@ -27,44 +123,95 @@
         "X86",
         "X86_64"
       ],
-      "cmakeToolchainFile": "."
+      "ndkDefaultStl": "LIBCXX_STATIC",
+      "ndkMetaPlatforms": {
+        "min": 19,
+        "max": 33,
+        "aliases": {
+          "20": 19,
+          "25": 24,
+          "J": 16,
+          "J-MR1": 17,
+          "J-MR2": 18,
+          "K": 19,
+          "L": 21,
+          "L-MR1": 22,
+          "M": 23,
+          "N": 24,
+          "N-MR1": 24,
+          "O": 26,
+          "O-MR1": 27,
+          "P": 28,
+          "Q": 29,
+          "R": 30,
+          "S": 31,
+          "Sv2": 32,
+          "Tiramisu": 33
+        }
+      },
+      "ndkMetaAbiList": [
+        {
+          "abi": "ARMEABI_V7A",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "ARM64_V8A",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86",
+          "bitness": 32,
+          "deprecated": false,
+          "default": true
+        },
+        {
+          "abi": "X86_64",
+          "bitness": 64,
+          "deprecated": false,
+          "default": true
+        }
+      ],
+      "originalCmakeToolchainFile": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/build/cmake/android.toolchain.cmake",
+      "cmakeToolchainFile": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/build/cmake/android.toolchain.cmake",
+      "cmake": {
+        "isValidCmakeAvailable": true,
+        "cmakeExe": "/Users/user/Library/Android/sdk/cmake/3.22.1/bin/cmake",
+        "minimumCmakeVersion": "3.18.0",
+        "ninjaExe": "/Users/user/Library/Android/sdk/cmake/3.22.1/bin/ninja",
+        "isPreferCmakeFileApiEnabled": true
+      },
+      "stlSharedObjectMap": {
+        "LIBCXX_SHARED": {
+          "ARMEABI_V7A": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so",
+          "ARM64_V8A": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so",
+          "X86": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/i686-linux-android/libc++_shared.so",
+          "X86_64": "/Users/user/Library/Android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/lib/x86_64-linux-android/libc++_shared.so"
+        },
+        "LIBCXX_STATIC": {},
+        "NONE": {},
+        "SYSTEM": {}
+      },
+      "project": {
+        "rootBuildGradleFolder": "/Users/user/repos/flutter_nano_ffi/android",
+        "cxxFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx",
+        "compilerSettingsCacheFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx",
+        "sdkFolder": "/Users/user/Library/Android/sdk",
+        "isNativeCompilerSettingsCacheEnabled": false,
+        "isBuildOnlyTargetAbiEnabled": true,
+        "isCmakeBuildCohabitationEnabled": false,
+        "isPrefabEnabled": false,
+        "isV2NativeModelEnabled": true
+      },
+      "nativeBuildOutputLevel": "QUIET"
     },
-    "buildSystemArgumentList": [],
-    "cFlagList": [],
-    "cppFlagsList": [],
-    "variantName": "debug",
-    "soFolder": "/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates/cmake/debug/lib",
-    "objFolder": "/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates/cmake/debug/obj",
-    "jsonFolder": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug",
-    "gradleBuildOutputFolder": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug",
-    "isDebuggableEnabled": true,
-    "validAbiList": [
-      "ARMEABI_V7A",
-      "ARM64_V8A",
-      "X86",
-      "X86_64"
-    ],
-    "buildTargetSet": []
+    "prefabDirectory": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/prefab"
   },
-  "abi": "X86",
-  "abiPlatformVersion": 16,
-  "cxxBuildFolder": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86",
-  "jsonFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/android_gradle_build.json",
-  "gradleBuildOutputFolder": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86",
-  "objFolder": "/Users/beb279/repos/flutter_nano_ffi/example/build/flutter_nano_ffi/intermediates/cmake/debug/obj/x86",
-  "buildCommandFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/build_command.txt",
-  "buildOutputFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/build_output.txt",
-  "modelOutputFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/build_model.json",
-  "cmake": {
-    "cmakeListsWrapperFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/CMakeLists.txt",
-    "toolchainWrapperFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/android_gradle_build.toolchain.cmake",
-    "buildGenerationStateFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/build_generation_state.json",
-    "cacheKeyFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/compiler_cache_key.json",
-    "compilerCacheUseFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/compiler_cache_use.json",
-    "compilerCacheWriteFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/compiler_cache_write.json",
-    "toolchainSettingsFromCacheFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cxx/debug/x86/compiler_settings_cache.cmake",
-    "cmakeWrappingBaseFolder": "."
+  "buildSettings": {
+    "environmentVariables": []
   },
-  "jsonGenerationLoggingRecordFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/json_generation_record.json",
-  "compileCommandsJsonFile": "/Users/beb279/repos/flutter_nano_ffi/android/.cxx/cmake/debug/x86/compile_commands.json"
+  "prefabFolder": "/Users/user/repos/flutter_nano_ffi/android/.cxx/cmake/debug/prefab/x86"
 }
