@@ -48,6 +48,16 @@ void dart_hash_state_block(
   blake2b_Final(&b2b, hash, 32);  
 }
 
+void dart_hash_message(
+  unsigned char *hash, size_t messagelen, unsigned char *message)
+{
+  blake2b_state b2b;
+
+  blake2b_Init(&b2b, 32);
+  blake2b_Update(&b2b, message, messagelen);
+  blake2b_Final(&b2b, hash, 32);  
+}
+
 void dart_account_checksum(unsigned char *checksum, unsigned char *publickey) {
   blake2b_state b2b;
 
