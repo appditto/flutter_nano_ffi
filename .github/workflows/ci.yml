@@ -5,43 +5,25 @@ on:
     branches: [ master ]
 
 jobs:
-  build_ed25519:
-    name: Build ed25519 library
+  test:
+    name: Build ed25519 library and run tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master   
-      - name: Run cmake
+      - uses: actions/checkout@v7
+
+      - name: Build ed25519 library
         working-directory: android
         run: |
           cmake .
           make
-      - name: Upload artifact
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: libraries
-          path: android/libed25519_blake2b.so
 
-  run_tests:
-    name: Run tests
-    needs: build_ed25519
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master   
-      - name: Download library
-        uses: actions/download-artifact@v2
-
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.0.5'
           channel: 'stable'
-
-      - name: Set workspace in env
-        run: echo "WORKSPACE=$(echo ${GITHUB_WORKSPACE})" >> $GITHUB_ENV
 
       - name: Run tests
         env:
-          ED215519_SO_FILE: ${{ env.WORKSPACE }}/libraries/libed25519_blake2b.so
+          ED215519_SO_FILE: ${{ github.workspace }}/android/libed25519_blake2b.so
         run: |
           flutter pub get
           flutter test
